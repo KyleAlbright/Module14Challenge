@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require("sequelize");
 
-const sequelize = require(" ../config/connection");
+const sequelize = require(" ../config/connection.js");
 
 const bcrypt = require("bcrypt");
 
@@ -30,16 +30,8 @@ User.init(
     password: {
       type: DataTypes.STRING,
       allowNull: false,
-      validatePassword: function (password) {
-        if (
-          !/^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{10,}$/.test(
-            password
-          )
-        ) {
-          throw new Error(
-            "The password must contain at least 10 characters, at least one uppercase letter, one lowercase letter, one number and one special character"
-          );
-        }
+      validate: {
+        len: [8],
       },
     },
   },
@@ -51,15 +43,18 @@ User.init(
       },
 
       async beforeUpdate(updatedUserData) {
-        updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+        updatedUserData.password = await bcrypt.hash(
+          updatedUserData.password,
+          10
+        );
         return updatedUserData;
-      }
+      },
     },
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user',
+    modelName: "user",
   }
 );
 
