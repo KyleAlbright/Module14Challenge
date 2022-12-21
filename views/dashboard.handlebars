@@ -1,21 +1,48 @@
-<section class="new-post-section">
-    <button type="submit" class="btn btn-primary btn-lg">+ Create New Post</button>
-</section>
 
+
+{{!-- <nav class="navbar bg-light mb-3">
+  <div class="container-fluid">
+   <h2 class="text-center card-header">Your Dashboard</h2>
+  </div>
+</nav>
+
+<section class="new-post-section">
+    <button type="submit" class="btn btn-primary btn-lg mb-3">+ Create New Post</button>
+</section>
 
 {{#if posts.length}}
 <section>
-    <h2>Your Dashboard</h2>
     <ul class="post-list">
         {{#each posts as |post|}}
         <li>
             {{> post-info }}
-            <a href="/dashboard/edit/{{post.id}}" class="edit-link">edit post</a>
+           <button type="submit" class="btn btn-secondary btn-sm mb-3 edit-link"><a href="/edit-posts/{{post.id}}"></a>Edit Post</button>
         </li>
         {{/each}}
     </ul>
 </section>
 {{/if}}
 
-<script src="/javascript/create-post.js"></script>
+    <script src="/js/post.js"></script> --}}
 
+    
+   <div class="card">
+  <h2 class="text-center card-header">Create New Post</h2>
+  <form class="card-body" id="new-post-form">
+    <input type="hidden" name="post-id" value="{{post.id}}"/>
+<div class="input-group mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-default">Title:</span>
+  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="post-title">
+</div>
+<div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Content:</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" name="post-body"  rows="3"></textarea>
+  </div>
+
+   
+    <button class="btn btn-primary mb-3">CREATE</button>
+  </form>
+</div>
+<script src="/js/post.js"></script>
+
+    
