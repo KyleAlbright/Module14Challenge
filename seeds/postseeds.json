@@ -1,0 +1,31 @@
+
+[
+    {
+        "title": "MVC",
+        "post_body": "MVC is an acronym for Model View Controller",
+        "user_id": 3
+
+    },
+
+    {
+        "title": "Handlebars",
+        "post_body": "Handlebars is a template engine used to dynamically generate HTML",
+        "user_id": 2
+
+    },
+
+    {
+        "title": "SQL",
+        "post_body": "MySQL is used to compile databases.",
+        "user_id": 1
+
+    },
+
+    {
+        "title": "Models",
+        "post_body": "We use the model folder to organize how the tables in the DB are layed out.",
+        "user_id": 3
+
+    }
+]
+
