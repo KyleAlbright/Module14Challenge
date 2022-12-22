@@ -1,3 +1,18 @@
+
+ <div class="card" >
+  <div class="card-header  flex-row justify-space-between">
+    <h2> stuff
+      {{posts.title}} {{ posts.post_body}}
+
+    </h2> 
+    <div class="col-3">Posted By:{{posts.user.username}}  on {{format_date posts.dateCreated}} <ul class="post-list">
+       
+        <li>
+          
+            {{!-- {{> post-info }} on {{format_date post.dateCreated}} --}}
+    </div>
+ 
+    </div>
 <div class="card">
   <h2 class="text-center card-header">Create New Post</h2>
   <form class="card-body" id="new-post-form">
@@ -9,6 +24,9 @@
 <div class="form-group mb-3">
     <label for="exampleFormControlTextarea1">Content:</label>
     <textarea class="form-control" id="exampleFormControlTextarea1" name="post-body" rows="3"></textarea>
+
+    <p class="form-label">Comment:</p>
+    <textarea class="form-input" id="comment-body" name="comment-body"></textarea>
   </div>
 
    

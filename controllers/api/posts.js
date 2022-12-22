@@ -1,6 +1,26 @@
 const router = require("express").Router();
-const { Post } = require("../../models");
+const { Post, User } = require("../../models");
 const withAuth = require("../../utils/auth");
+
+router.get ("/:id", async (req, res) => {
+ 
+  try {
+    const userPosts = await Post.findByPk(req.params.id, {
+      include: [{ model: User, 
+      attributes: ['username'], }]
+    });
+
+    if(userPosts) {
+      const posts = userPosts.get ({ plain: true});
+
+      res.render("post", {posts, loggedIn: req.session.loggedIn})
+    } else {
+      res.status(404).end();
+    }
+  } catch (err) {
+    res.status(500).json(err)
+  }
+})
 
 router.post("/", withAuth, async (req, res) => {
   const postBody = req.body;
@@ -31,7 +51,7 @@ router.put("/:id", withAuth, async (req, res) => {
   }
 });
 
-router.put("/:id", withAuth, async (req, res) => {
+router.delete("/:id", withAuth, async (req, res) => {
     try {
       const [postsToDelete] = Post.destroy({
         where: { id: req.params.id },
