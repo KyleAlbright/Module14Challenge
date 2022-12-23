@@ -22,18 +22,20 @@ router.get ("/:id", async (req, res) => {
   }
 })
 
+
+
 router.post("/", withAuth, async (req, res) => {
-  const postBody = req.body;
   try {
     const newPost = await Post.create({
-      ...postBody,
+      ...req.body,
       user_id: req.session.userId,
     });
-    res.json(newPost);
+    res.status(200).json(newPost);
   } catch (err) {
-    res.status(500).json(err);
+    res.status(400).json(err);
   }
 });
+
 
 router.put("/:id", withAuth, async (req, res) => {
   try {

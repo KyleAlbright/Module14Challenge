@@ -7,7 +7,7 @@
 </nav>
 
 <section class="new-post-section">
-    <button type="submit" class="btn btn-primary btn-lg mb-3"><a href="/create-posts{{user.id}}"></a>+ Create New Post</button>
+  <a class="btn btn-primary btn-lg mb-3" href="/dashboard/create">+ Create New Post</a>
 </section>
 
 {{#if posts.length}}
@@ -15,7 +15,7 @@
     <ul class="post-list">
         {{#each posts as |post|}}
         <li>
-            {{> post-info }}  on {{format_date dateCreated}}
+            {{> post-info }}  
            <button type="submit" class="btn btn-secondary btn-sm mb-3 edit-link"><a href="/edit-posts/{{post.id}}"></a>Edit Post</button>
         </li>
         {{/each}}

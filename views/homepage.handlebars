@@ -1,38 +1,10 @@
   {{#each posts as |post|}}
- <div class="card" >
-  <div class="card-header  flex-row justify-space-between">
-    <h2>
-      <a href="/api/posts/{{post.id}}"> {{post.title}} {{post.post_body}}
-  
-      </a>
-    </h2> 
-    <div class="col-3">Posted By:{{user.username}}  on {{format_date post.dateCreated}} <ul class="post-list">
-       
-        <li>
-          
-            {{!-- {{> post-info }} on {{format_date post.dateCreated}} --}}
-    </div>
+ <div class="card w-100 mb-3" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"> <a href="/api/posts/{{post.id}}"> {{post.title}}</a></h5>
+    <h6 class="card-subtitle mb-2 text-muted">Posted By:{{user.username}}  on {{format_date post.dateCreated}}</h6>
+    <p class="card-text">{{post.post_body}}</p>
+  </div>
+  </div>
     {{/each}}
-  </div>  
-  {{!-- {{/if}} --}}
-  {{!-- <p class="card-body">
-   {{post.post_body}}
-  </p> --}}
-  {{!-- {{> comments }} --}}
-{{!-- {{#if loggedIn}}
-  <div class="card">
-  <div class="card-header"></div>
-  <form class="card-body" id="newcomment">
-    
-    <p class="form-label">Comment:</p>
-    <textarea class="form-input" id="comment-body" name="comment-body"></textarea>
-    <button type="submit" class="btn btn-primary">Submit:</button>
-  </form>
-
-</div>
- {{/if}} --}}
-{{!-- <script src="/js/post.js"></script> --}}
-{{!-- <script src="/js/comment.js"></script> --}}
-
-
-
+  

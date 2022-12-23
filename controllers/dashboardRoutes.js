@@ -27,7 +27,7 @@ router.get("/", withAuth, async (req, res) => {
 // create new post route
 router.get("/create", withAuth, (req, res) => {
   res.render("create-posts", {
-    layout: "dashboard",
+    layout: "main",
   });
 });
 // route to edit the post
