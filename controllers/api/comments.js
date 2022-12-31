@@ -12,7 +12,7 @@ router.get("/", withAuth, async (req, res) => {
       comment.get({ plain: true })
     );
 
-    res.render("single-post", { userComments, loggedIn: req.session.loggedIn });
+    res.json(userComments);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -20,7 +20,7 @@ router.get("/", withAuth, async (req, res) => {
 
 router.post("/", withAuth, async (req, res) => {
   const commentBody = req.body;
-
+  console.log(req.body)
   try {
     const newComment = await Comment.create({
       ...commentBody,
@@ -28,6 +28,7 @@ router.post("/", withAuth, async (req, res) => {
     });
     res.json(newComment);
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });

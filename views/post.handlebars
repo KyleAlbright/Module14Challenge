@@ -6,16 +6,17 @@
     <h6 class="card-subtitle mb-2 text-muted">Posted By:{{posts.user.username}}  on {{format_date posts.dateCreated}}</h6>
     <p class="card-text">{{posts.post_body}}</p>
   </div>
+
 </div>
 {{#if loggedIn}}
 <div>
 
 <label for="comment">Add Comments:</label>
-<textarea class="form-control" rows="5" id="comment" name="text"></textarea>
-<button type ="submit" class="btn btn-primary">Submit</button>
+<textarea class="form-control" rows="5" id="comment" name="post-id" data-id="{{posts.id}}"></textarea>
+<button type ="submit" class="btn btn-primary" id="newcomment">Submit</button>
 
 </div>
-
+<script src = "/js/comment.js"></script>
 {{/if}}
    
    
