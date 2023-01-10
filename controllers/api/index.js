@@ -1,4 +1,4 @@
-
+// directs the routes in the API folder
 const router = require('express').Router();
 
 const userRoutes = require('./users.js');

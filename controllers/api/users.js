@@ -21,6 +21,7 @@ router.post ('/', async (req, res) => {
     }
 });
 
+// logging in an existing user
 router.post('/login', async (req, res) => {
     try {
       const user = await User.findOne({

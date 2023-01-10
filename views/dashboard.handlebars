@@ -16,7 +16,7 @@
         {{#each posts as |post|}}
         <li>
             {{> post-info }}  
-           <button type="submit" class="btn btn-secondary btn-sm mb-3 edit-link"><a href="/edit-posts/{{post.id}}"></a>Edit Post</button>
+           <button type="submit" class="btn btn-secondary btn-sm mb-3 edit-link"><a href="/api/posts/edit/{{post.id}}">Edit Post</a></button>
         </li>
         {{/each}}
     </ul>

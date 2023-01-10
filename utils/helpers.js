@@ -1,3 +1,4 @@
+// getting the date
 module.exports = {
     format_date: (date) => {
         return `${

@@ -1,0 +1,23 @@
+<div class="card">
+  <h2 class="text-center card-header">Edit Post</h2>
+  <div class="card-body" id="edit-post-form">
+      <div class="input-group mb-3">
+       <span class="input-group-text" id="inputGroup-sizing-default">Title:</span>
+     <input type="text" class="form-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="post-title" value="{{post.title}}"/>
+    </div>
+    
+    <div class="form-group mb-3">
+      <label class="form-label">Content:</label>
+       <textarea class="form-control form-input" name="post-body">{{post.post_body}}</textarea>
+    </div>
+ 
+    <button class="btn btn-primary" onclick="editPostHandler({{post.id}}, 'PUT')">EDIT</button>
+    <input type="hidden" name="post-id" value="{{post.id}}"/>
+  </div>
+  <div class="card-body">
+   <button class="btn btn-primary" type="click" id="delete-btn" onclick="editPostHandler({{post.id}}, 'DELETE')">DELETE</button>
+  </div> 
+</div>
+
+<script src="/js/edit.js"></script>
+
