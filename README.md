@@ -36,6 +36,8 @@ When first viewing the site you will be directed to the homepage. On the homepag
 ![Screenshot (69)](https://user-images.githubusercontent.com/110487869/211684553-2c9b4d37-cbbe-4e50-9513-3bd0ca90ffc6.png)
 ![Screenshot (70)](https://user-images.githubusercontent.com/110487869/211684560-65e45433-59fd-4f4e-aa02-a84429dae2f9.png)
 
+Heroku link - https://github.com/KyleAlbright/UTBCTechBlog
+
 ### [Contributing](#table-of-contents)
 I am currently not accepting contributions to this project.
 
