@@ -13,7 +13,7 @@ router.get("/", withAuth, async (req, res) => {
     });
     // serialization to remove excess data that wont be displayed
     const userPosts = postData.map((post) => post.get({ plain: true }));
-    console.log(userPosts)
+    
     res.render("dashboard", {
       // layout: "dashboard",
      posts:  userPosts, loggedIn: req.session.loggedIn
