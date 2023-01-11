@@ -33,6 +33,8 @@ You can start the application by either running "npm start" or "npm run watch" f
 When first viewing the site you will be directed to the homepage. On the homepage you will only be able to view posts, unless you are logged in. Please log in to be able to interact with the website. If you do not wish to create an account, there will be login info in the userseeds.json file that you may use. once logged in you should be able to follow the user interface to do any posting, commenting, editing, or deleting. 
 
 
+![Screenshot (69)](https://user-images.githubusercontent.com/110487869/211684553-2c9b4d37-cbbe-4e50-9513-3bd0ca90ffc6.png)
+![Screenshot (70)](https://user-images.githubusercontent.com/110487869/211684560-65e45433-59fd-4f4e-aa02-a84429dae2f9.png)
 
 ### [Contributing](#table-of-contents)
 I am currently not accepting contributions to this project.
